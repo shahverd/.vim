@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo $@
+
+if [[ ! $1 ]]; then
+	gvim -f --servername GVIM
+fi
+
+if [[ $1 ]]; then
+	gvim -f --servername GVIM --remote-tab "${@}" 
+fi
+
+wmctrl -a gvim
