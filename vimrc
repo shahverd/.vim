@@ -262,6 +262,8 @@ set laststatus=2
 " To enable horisental scroll
 set guioptions+=b
 
+" To make terminal inside vim run faster by changig color range
+let g:ConqueTerm_FastMode = 1
 
 "let g:miniBufExplVSplit = 20
 
