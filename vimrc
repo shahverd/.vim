@@ -3,6 +3,7 @@
 " $URL: http://www.mostafa.info
 " $Date: 2013-03-13 15:51:49 +0430 
 "
+"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -111,11 +112,56 @@ nmap <F9>  :NERDTreeTabsToggle<cr>
 "nmap <F7> :tabp<cr>
 nmap <F5>  :FufBuffer<cr>
 nmap <F4>  :ConqueTermVSplit bash<cr>
-"nmap <F3>  :Gsearch<cr>
+nmap <F3>  :%s///ign
 nmap <F1>  :Autoformat<cr>
 
 " make Y copy to the end of the line and not copy a whole line
 map Y y$
+
+
+
+" To FORCE myself not to use some keys
+" to disable in Escape Mode
+map <Left>      <Nop>
+map <Right>     <Nop>
+map <Up>        <Nop>
+map <Down>      <Nop>
+
+map <PageUp>    <Nop>
+map <PageDown>  <Nop>
+map <Home>      <Nop>
+map <End>       <Nop>
+map <Insert>    <Nop>
+map <Del>       <Nop>
+
+
+" To Disable them in InsertMode
+imap <Left>      <Nop>
+imap <Right>     <Nop>
+imap <Up>        <Nop>
+imap <Down>      <Nop>
+
+imap <PageUp>    <Nop>
+imap <PageDown>  <Nop>
+imap <Home>      <Nop>
+imap <End>       <Nop>
+imap <Insert>    <Nop>
+imap <Del>       <Nop>
+
+imap <Left>      <Nop>
+imap <Right>     <Nop>
+imap <Up>        <Nop>
+imap <Down>      <Nop>
+
+imap <PageUp>    <Nop>
+imap <PageDown>  <Nop>
+imap <Home>      <Nop>
+imap <End>       <Nop>
+imap <Insert>    <Nop>
+imap <Del>       <Nop>
+
+
+
 
 
 " to make tabbar background invisable
