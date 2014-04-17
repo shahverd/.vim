@@ -1,0 +1,92 @@
+"
+" $Author: Mostafa Shahverdy 
+" $URL: http://www.mostafa.info
+" $Date: 2013-03-13 15:51:49 +0430 
+"
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"if has("gui_win32")
+"set guifont=consolas:h10:cANSI
+"endif
+
+
+"custom Gui
+"set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+"set guioptions-=e  "remove gui tabs and show builtin 
+"set guioptions-=r  "remove right-hand scroll bar"
+set guioptions+=b " To enable horisental scroll
+
+
+set guifont=Courier\ 10\ Pitch\ 10
+"set guifont=consolas
+
+"Line numbers
+set number
+
+"line wrap
+set nowrap
+
+"Mouse activation
+set mouse=a
+
+" Start the selection mode with Shift+Arrows/Home/End/PageUp/PageDown, and with
+" the mouse
+"set selectmode=mouse,key
+
+" Start the Visual/Selection mode with using Shift+Arrows/etc
+"set keymodel=startsel
+
+
+"Highlight the string we searched.
+set hlsearch 
+
+" Highlight the searched string, while typing.
+set incsearch
+
+" Tab spacing.
+set tabstop=4 
+set shiftwidth=4
+set softtabstop=4
+
+" Use tabs at the start of a line, spaces elsewhere.
+set smarttab 
+
+
+" To prevent tabs have full path and show only file name
+"set guitablabel=%t
+set guitablabel=%N\.%t\ %M
+
+"to prevent showing arabic chars merged
+set noarabicshape
+
+
+" This is a very useful option to make + register the default one, so just use
+" p to paste instead of "+p
+set clipboard=unnamedplus
+
+" Start fullscreen
+if has("gui_running")
+	" GUI is running or is about to start.
+	" Maximize gvim window.
+	set lines=100 columns=100
+endif
+
+" To prevent filename~ and .swp files in normal directories
+"set backupdir=~/tmp
+set nobackup
+set noswapfile
+
+
+" To make arline be shown always
+" 0: never
+" 1: only if there are at least two windows (this one is the default)
+" 2: always
+" See :h laststatus for more info..
+set laststatus=2
+
+
+" Format Tabline in Vim and NOT GVim
+set tabline=%!MyTabLine() "Function defined
+"Rename tabs to show tab# and # of viewports
+
