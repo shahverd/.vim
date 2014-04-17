@@ -20,7 +20,7 @@ set guioptions+=b " To enable horisental scroll
 
 "set guifont=Courier\ 10\ Pitch\ 10
 "set guifont=Courier\ New\ 10 "Good support for Persian, but its thin
-"set guifont=DejaVu\ Sans\ Mono\ 10 "Good support for Persian
+set guifont=DejaVu\ Sans\ Mono\ 10 "Good support for Persian
 "set guifont=consolas
 
 "Line numbers
