@@ -48,6 +48,9 @@ Plugin 'vim-scripts/Conque-Shell'
 " Instead of YouCompleteMe
 Plugin 'AutoComplPop'
 
+
+"Plugin 'flazz/vim-colorschemes'
+
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 " Code completion

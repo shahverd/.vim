@@ -5,11 +5,6 @@
 "
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"if has("gui_win32")
-"set guifont=consolas:h10:cANSI
-"endif
-
-
 "custom Gui
 "set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
@@ -18,10 +13,15 @@ set guioptions-=T  "remove toolbar
 set guioptions+=b " To enable horisental scroll
 
 
+" Sample متن فارسی برای آزمایش فونتهای زیر
 "set guifont=Courier\ 10\ Pitch\ 10
 "set guifont=Courier\ New\ 10 "Good support for Persian, but its thin
-set guifont=DejaVu\ Sans\ Mono\ 10 "Good support for Persian
+set guifont=DejaVu\ Sans\ Mono\ 11 "Good support for Persian
 "set guifont=consolas
+"set guifont=Andale\ Mono\ 12
+"set guifont=Monospace\ 12
+"set guifont=Liberation\ Mono\ 12
+"set guifont=FreeMono\ 12
 
 "Line numbers
 set number
@@ -91,4 +91,3 @@ set laststatus=2
 " Format Tabline in Vim and NOT GVim
 set tabline=%!MyTabLine() "Function defined
 "Rename tabs to show tab# and # of viewports
-

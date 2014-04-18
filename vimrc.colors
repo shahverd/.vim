@@ -16,3 +16,4 @@
 
 " to make tabbar background invisable
 hi TabLineFill cterm=bold gui=bold
+
