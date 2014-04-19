@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-# This script probably shouldn't be here, 
+# This script probably shouldn't be here 
 # But as I install Vim on a fresh install
 # I can use this script to easily configure my machine
 
