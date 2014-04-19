@@ -3,6 +3,11 @@
 # You need to have pear and nodejs installed
 
 #Change .desktop file to open in tabs
+
+#To install Youcompleteme
+sudo apt-get install vim-youcompleteme
+vam install youcompleteme
+
 cp ~/.vim/gvim.desktop /usr/share/applications/
 chmod +x /usr/share/applications/gvim.desktop
 

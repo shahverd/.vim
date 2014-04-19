@@ -46,7 +46,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'vim-scripts/Conque-Shell'
 
 " Instead of YouCompleteMe
-Plugin 'AutoComplPop'
+" Plugin 'AutoComplPop'
 
 
 "Plugin 'flazz/vim-colorschemes'

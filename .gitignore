@@ -1,3 +1,6 @@
-EXTRA
+autoload
 bundle
+doc
+plugin
 sessions
+EXTRA
