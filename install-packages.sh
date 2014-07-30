@@ -30,6 +30,7 @@ apt-get install nethogs
 apt-get install openjdk-7-jdk
 apt-get install wmctrl
 apt-get install cmake
+apt-get install scons
 apt-get install libreadline-dev
 
 # To hide desktop icons
