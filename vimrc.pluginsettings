@@ -14,6 +14,13 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
 
+" To show a smart tabline (This tabline shows buffers, and not tabs!)
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+"To show only filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 " unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
@@ -39,6 +46,7 @@ let g:ConqueTerm_FastMode = 1
 let g:session_autosave="yes"
 let g:session_autoload="yes"
 let g:session_default_to_last="true"
+
 "let g:session_directory="~"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree On right side

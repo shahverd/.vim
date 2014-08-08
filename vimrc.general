@@ -50,6 +50,7 @@ set incsearch
 set tabstop=4 
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 
 " Use tabs at the start of a line, spaces elsewhere.
 set smarttab 
@@ -68,11 +69,11 @@ set noarabicshape
 set clipboard=unnamedplus
 
 " Start fullscreen
-if has("gui_running")
-	" GUI is running or is about to start.
-	" Maximize gvim window.
-	set lines=100 columns=100
-endif
+"if has("gui_running")
+	"" GUI is running or is about to start.
+	"" Maximize gvim window.
+	"set lines=100 columns=100
+"endif
 
 " To prevent filename~ and .swp files in normal directories
 "set backupdir=~/tmp

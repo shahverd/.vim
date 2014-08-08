@@ -3,11 +3,12 @@
 echo $@
 
 if [[ ! $1 ]]; then
-	gvim -f --servername GVIM
+	gvim -geometry 500x500 -f --servername GVIM
 fi
 
 if [[ $1 ]]; then
-	gvim -f --servername GVIM --remote-tab "${@}" 
+	#gvim -f --servername GVIM --remote-tab "${@}" 
+	gvim -geometry 500x500 -f --servername GVIM --remote "${@}" 
 fi
 
 wmctrl -a gvim
