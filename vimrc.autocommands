@@ -6,7 +6,7 @@
 "
 
 "This will change directory on startup to the current file's directory
-autocmd VimEnter * lcd %:p:h   
+"autocmd VimEnter * lcd %:p:h   
 
 " change the color of current line
 "autocmd InsertEnter * set cul

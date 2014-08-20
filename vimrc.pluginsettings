@@ -51,6 +51,8 @@ let g:session_default_to_last="true"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree On right side
 let g:NERDTreeWinPos = "right"
+" NERDTree showing bookmarks
+let NERDTreeShowBookmarks=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ctags command to open
 let Tlist_Ctags_Cmd='/usr/bin/ctags'
