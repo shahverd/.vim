@@ -18,14 +18,10 @@ This is a set of Plugins+Configurations+SystemSettings. Plusings and configurati
 OS indipendant, but my SystemSettings are only for Linux (Debian family). Still you can use it
 if you are not using a Debian Gnu/Linux. 
 
-# Plugins
-I used vundle to manage my plugins. also there is a file named "vimrc.vundle"
-to keep list of plugins.
+## [Vundle](https://github.com/gmarik/Vundle.vim)
+Vundle is short for _Vim bundle_ and is a [Vim] plugin manager.
 
-## Vundle
-[Vundle] is short for _Vim bundle_ and is a [Vim] plugin manager.
-
-[Vundle] allows you to...
+Vundle allows you to...
 
 * keep track of and [configure] your plugins right in the `.vimrc`
 * [install] configured plugins (a.k.a. scripts/bundle)
@@ -34,19 +30,19 @@ to keep list of plugins.
 * [clean] unused plugins up
 * run the above actions in a *single keypress* with [interactive mode]
 
-[Vundle] automatically...
+Vundle] automatically...
 
 * manages the [runtime path] of your installed scripts
 * regenerates [help tags] after installing and updating
 
-[Vundle] is undergoing an [interface change], please stay up to date to get latest changes.
+Vundle is undergoing an [interface change], please stay up to date to get latest changes.
 
 [![Gitter-chat](https://badges.gitter.im/gmarik/Vundle.vim.png)](https://gitter.im/gmarik/Vundle.vim) for discussion and support.
 
 ![Vundle-installer](http://i.imgur.com/Rueh7Cc.png)
 
 
-## NerdTree
+## [NerdTree](https://github.com/scrooloose/nerdtree)
 The NERD tree allows you to explore your filesystem and to open files and
 directories. It presents the filesystem to you in the form of a tree which you
 manipulate with the keyboard and/or mouse. It also allows you to perform
@@ -96,7 +92,7 @@ The following features and functionality are provided by the NERD tree:
   * There's an API for adding your own keymappings
 
 
-## Vim-NerdTree-Tabs
+## [Vim-NerdTree-Tabs](https://github.com/jistr/vim-nerdtree-tabs)
 This plugin aims at making NERDTree feel like a true panel, independent of tabs.
 
 * **Just one NERDTree**, always and ever. It will always look the same in
@@ -113,7 +109,7 @@ This plugin aims at making NERDTree feel like a true panel, independent of tabs.
 Many of these features can be switched off. See section Configuration.
 
 
-## NerdCommenter
+## [NerdCommenter](https://github.com/scrooloose/nerdcommenter)
 The following key mappings are provided by default (there is also a menu 
 provided that contains menu items corresponding to all the below mappings): 
 
@@ -175,11 +171,11 @@ left side (\<leader\>cl) or both sides (\<leader\>cb).
 **[count]\<leader\>cu |NERDComUncommentLine|**  
 Uncomments the selected line(s). 
 
-## TagBar
+## [TagBar](https://github.com/majutsushi/tagbar)
 Tagbar is a vim plugin for browsing the tags of source code files.
 It provides a sidebar that displays the ctags-generated tags of the current file, ordered by their scope. This means that for example methods in C++ are displayed under the class they are defined in.
 
-## ZoomWin
+## [ZoomWin](https://github.com/vim-scripts/ZoomWin)
 The idea is to make it easy to zoom into and out of a window.  ZoomWin supports normal windows, and it now also supports scratch-windows, no-name windows, and modified-buffer windows.
 
  * ZoomWin is a 7.2 plugin (as of v23)
@@ -192,7 +188,7 @@ The idea is to make it easy to zoom into and out of a window.  ZoomWin supports 
  
  * Session files are guaranteed to be unique to each vim session, so multiple vims can use zoom-in/out without interfering with one another
 
-## Vim-airline
+## [Vim-airline](https://github.com/bling/vim-airline)
 Lean &amp; mean status/tabline for vim that's light as air.
 
 ![img](https://github.com/bling/vim-airline/wiki/screenshots/demo.gif)
@@ -206,7 +202,7 @@ Lean &amp; mean status/tabline for vim that's light as air.
 *  The master branch tries to be as stable as possible, and new features are merged in only after they have gone through a [full regression test][33].
 *  Unit testing suite.
 
-## Vim-Misc
+## [Vim-Misc](https://github.com/xolox/vim-misc)
 The vim-misc plug-in contains Vim scripts that are used by most of the [Vim
 plug-ins I've written] [plugins] yet don't really belong with any single one of
 the plug-ins. Basically it's an extended standard library of Vim script
@@ -221,24 +217,140 @@ users are now required to install the miscellaneous scripts separately. This is
 unfortunate for users who are upgrading from a previous release that did bundle
 the miscellaneous scripts, but I don't see any way around this. Sorry!
 
-## Vim-Session
+## [Vim-Session](https://github.com/xolox/vim-session)
 The vim-session plug-in improves upon [Vim](http://www.vim.org/)'s built-in [:mksession][mksession] command by enabling you to easily and (if you want) automatically persist and restore your Vim editing sessions. It works by generating a [Vim script](http://vimdoc.sourceforge.net/htmldoc/usr_41.html#script) that restores your current settings and the arrangement of tab pages and/or split windows and the files they contain.
 
-## Vim-Surround
+It's easiest to explain with examples.  Press `cs"'` inside
+
+    "Hello world!"
+
+to change it to
+
+    'Hello world!'
+
+Now press `cs'<q>` to change it to
+
+    <q>Hello world!</q>
+
+To go full circle, press `cst"` to get
+
+    "Hello world!"
+
+To remove the delimiters entirely, press `ds"`.
+
+    Hello world!
+
+Now with the cursor on "Hello", press `ysiw]` (`iw` is a text object).
+
+    [Hello] world!
+
+Let's make that braces and add some space (use `}` instead of `{` for no
+space): `cs]{`
+
+    { Hello } world!
+
+Now wrap the entire line in parentheses with `yssb` or `yss)`.
+
+    ({ Hello } world!)
+
+Revert to the original text: `ds{ds)`
+
+    Hello world!
+
+Emphasize hello: `ysiw<em>`
+
+    <em>Hello</em> world!
+
+Finally, let's try out visual mode. Press a capital V (for linewise
+visual mode) followed by `S<p class="important">`.
+
+    <p class="important">
+      <em>Hello</em> world!
+    </p>
+
+This plugin is very powerful for HTML and XML editing, a niche which
+currently seems underfilled in Vim land.  (As opposed to HTML/XML
+*inserting*, for which many plugins are available).  Adding, changing,
+and removing pairs of tags simultaneously is a breeze.
+
+The `.` command will work with `ds`, `cs`, and `yss` if you install
+[repeat.vim](https://github.com/tpope/vim-repeat).
+
+## [Vim-Surround](https://github.com/tpope/vim-surround)
 Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
 
-## Vim-AutoFormat
+## [Vim-AutoFormat](https://github.com/Chiel92/vim-autoformat)
 Format your code with only one button press! This plugin makes use of external formatprograms to achieve the best result. Check the list of formatprograms to see which languages are supported by default. You can easily customize or add your own formatprogram. When no formatprogram exists (or no formatprogram is installed) for a certain filetype, vim-autoformat uses vim's indent functionality as a fallback.
 
-## Conque-Shell
+## [Conque-Shell](http://code.google.com/p/conque/)
 Conque is a Vim plugin which allows you to run interactive programs, such as bash on linux or powershell.exe on Windows, inside a Vim buffer. In other words it is a terminal emulator which uses a Vim buffer to display the program output.
 
-## AutoComplPop
+## [AutoComplPop](https://github.com/vim-scripts/AutoComplPop)
 With this plugin, your vim comes to automatically opens popup menu for 
 completions when you enter characters or move the cursor in Insert mode. It 
 won't prevent you continuing entering characters. 
 
-## FuzzyFinder
+Which completion method is used depends on the text before the cursor. The
+default behavior is as follows:
+
+        kind      filetype    text before the cursor ~
+        Keyword   *           two keyword characters
+        Filename  *           a filename character + a path separator 
+                              + 0 or more filename character
+        Omni      ruby        ".", "::" or non-word character + ":"
+                              (|+ruby| required.)
+        Omni      python      "." (|+python| required.)
+        Omni      xml         "<", "</" or ("<" + non-">" characters + " ")
+        Omni      html/xhtml  "<", "</" or ("<" + non-">" characters + " ")
+        Omni      css         (":", ";", "{", "^", "@", or "!")
+                              + 0 or 1 space
+
+Also, you can make user-defined completion and snipMate's trigger completion
+(|acp-snipMate|) auto-popup if the options are set.
+
+These behavior are customizable.
+
+## [FuzzyFinder](https://github.com/vim-scripts/AutoComplPop)
 FuzzyFinder provides convenient ways to quickly reach the 
 buffer/file/command/bookmark/tag you want. FuzzyFinder searches with the 
-fuzzy/partial pattern to which it converted an entered pattern.
+fuzzy/partial pattern to which it converted an entered pattern. 
+
+        Entered pattern  Fuzzy pattern   Partial pattern ~ 
+> 
+        abc              *a*b*c*         *abc* 
+        dir/file         dir/*f*i*l*e*   dir/*file* 
+        d*r/file         d*r/*f*i*l*e*   d*r/*file* 
+        ../**/s          ../**/*s*       ../**/*s* 
+                         (** allows searching a directory tree.) 
+< 
+You will be happy when: 
+
+        "./AhLongLongLongLongLongFile.txt" 
+        "./AhLongLongLongLongLongName.txt" 
+        "./OhLongLongLongLongLongFile.txt" 
+        "./OhLongLongLongLongLongName.txt" <- you want :O 
+
+Type "ON" and "OhLongLongLongLongLongName.txt" will be selected. :D 
+
+FuzzyFinder can search: 
+
+        - buffers 
+        - files 
+        - directories 
+        - most recently used files 
+        - files around most recently used files 
+        - most recently used command-lines 
+        - bookmarked files 
+        - bookmarked directories 
+        - tags 
+        - files which are included in current tagfiles 
+        - jump list 
+        - change list 
+        - buffer lines 
+        - quickfix 
+        - help 
+
+FuzzyFinder also provides APIs to use its system of searching files or 
+selecting items. 
+
+FuzzyFinder supports multibyte characters. 
