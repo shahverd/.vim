@@ -18,7 +18,7 @@ nmap <F9>  :NERDTreeTabsToggle<cr>
 "nmap <F7> :tabp<cr>
 nmap <F8>  :bn!<cr>
 nmap <F7>  :bp!<cr>
-nmap <F6>  :bd<cr>
+nmap <F6>  :bp<bar>sp<bar>bn<bar>bd<cr>
 nmap <F5>  :FufBuffer<cr>
 
 nmap <F4>  :ConqueTermVSplit bash<cr>
