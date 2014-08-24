@@ -89,7 +89,10 @@ set noswapfile
 set laststatus=2
 
 " To make cursor stays in the middle of the screen
-set scrolloff=30
+set scrolloff=3
+
+" To change the leader
+let mapleader = ","
 
 " To have relativenumber in normal mode
 autocmd InsertEnter * :set norelativenumber 
