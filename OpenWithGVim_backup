@@ -4,14 +4,13 @@ echo $@
 
 if [[ ! $1 ]]; then
     gvim -geometry 500x500 -f --servername GVIM
-    #gnome-terminal -geometry 500x500 --sb=false -e nvim -f --servername VI
+	#mlterm -geometry 500x500 --sb=false -e vi -f --servername VI
 fi
 
 if [[ $1 ]]; then
 	#gvim -f --servername GVIM --remote-tab "${@}" 
     gvim -geometry 500x500 -f --servername GVIM --remote "${@}" 
-    #gnome-terminal -geometry 500x500 --sb=false -e vi -f --servername VI --remote "${@}"
+	#mlterm -geometry 500x500 --sb=false -e vi -f --servername VI --remote "${@}"
 fi
 
 wmctrl -a gvim 
-#wmctrl -a nvim 

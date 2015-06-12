@@ -16,19 +16,34 @@ nmap <F9>  :NERDTreeTabsToggle<cr>
 
 "nmap <F8> :tabn<cr>
 "nmap <F7> :tabp<cr>
-nmap <F8>  :bn!<cr>
-nmap <F7>  :bp!<cr>
-nmap <F6>  :bp<bar>sp<bar>bn<bar>bd<cr>
-nmap <F5>  :FufBuffer<cr>
+"nmap <F8>  :bn!<cr>
+"nmap <F7>  :bp!<cr>
 
-nmap <F4>  :ConqueTermVSplit bash<cr>
+
+"nmap <M-l>  :bn!<cr>
+"nmap <M-h>  :bp!<cr>
+
+nmap gl    :bn!<cr>
+nmap gh    :bp!<cr>
+
+nmap gbd  :bp<bar>sp<bar>bn<bar>bd<cr>
+nmap gf  :FufBuffer<cr>
+
+"nmap <F4>  :ConqueTermVSplit bash<cr>
 nmap <F3>  :%s///ign
-nmap <F1>  :Autoformat<cr>
+"nmap <F1>  :Autoformat<cr>
+nmap <F2>  :YcmDiags<cr>
+nmap <F1>  :YcmCompleter GoToDefinitionElseDeclaration<cr>
 
 " make Y copy to the end of the line and not copy a whole line
 map Y y$
 
 
+" To move through blocks of code using [[ ]] [] ][
+map [[ ?{<cr>:nohl<cr>
+map ][ /{<cr>:nohl<cr>
+map ]] /}<cr>:nohl<cr>
+map [] ?}<cr>:nohl<cr>
 
 " To FORCE myself not to use some keys
 " to disable in Escape Mode
@@ -79,3 +94,12 @@ imap <Del>       <Nop>
 " then s/gree/red/g
 " it will be like '<,>'s/greenred/g 
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>

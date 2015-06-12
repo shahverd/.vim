@@ -26,6 +26,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/ZoomWin'
 
+Plugin 'jszakmeister/vim-togglecursor'
+
 " Not configured yet
 "Plugin 'Lokaltog/powerline'
 "Plugin 'Lokaltog/vim-powerline'
@@ -46,13 +48,22 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'vim-scripts/Conque-Shell'
 
 " Instead of YouCompleteMe
-Plugin 'AutoComplPop'
+"Plugin 'AutoComplPop'
 
+
+" tmux panes plus vim windows together
+Plugin 'christoomey/vim-tmux-navigator'
 
 "Plugin 'flazz/vim-colorschemes'
 
 Plugin 'L9'
 Plugin 'FuzzyFinder'
+
+"" Ultisnips Snippet Track the engine.
+ Bundle 'SirVer/ultisnips'
+ " Snippets are separated from the engine. Add this if you want them:
+ Bundle 'honza/vim-snippets'
+
 " Code completion
 " This plugin needs to be compiled. 
 " It requres vim-misc
@@ -62,37 +73,20 @@ Plugin 'FuzzyFinder'
 " ./install.sh --clang-completer
 " Notice: I compiled it without --clang-copletere to avoid extra download for
 " my self atm ;)
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'ervandew/supertab'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'ervandew/supertab'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between here and filetype plugin indent on.
-" scripts on GitHub repos
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'tpope/vim-rails.git'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" scripts from http://vim-scripts.org/vim/scripts.html
 
-" scripts not on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" ...
+" Add maktaba and codefmt to the runtimepath.
+" (The latter must be installed before it can be used.)
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+" Also add Glaive, which is used to configure codefmt's maktaba flags. See
+" `:help :Glaive` for usage.
+Plugin 'google/vim-glaive'
+call glaive#Install()
+" Optional: Enable codefmt's default mappings on the <Leader>= prefix.
+Glaive codefmt plugin[mappings]
+
 
 filetype plugin indent on     " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Plugin commands are not allowed.
-" Put your stuff after this line
-
