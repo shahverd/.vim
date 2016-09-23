@@ -11,20 +11,22 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+"call vundle#rc()
+"call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "let path = '~/some/path/here'
 "call vundle#rc(path)
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-scripts/ZoomWin'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'vim-scripts/ZoomWin'
 
 Plugin 'jszakmeister/vim-togglecursor'
 
@@ -45,24 +47,24 @@ Plugin 'tpope/vim-surround'
 Plugin 'Chiel92/vim-autoformat'
 
 " To open terminal inside VIM
-Plugin 'vim-scripts/Conque-Shell'
+"Plugin 'vim-scripts/Conque-Shell'
 
 " Instead of YouCompleteMe
 "Plugin 'AutoComplPop'
 
 
 " tmux panes plus vim windows together
-Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'christoomey/vim-tmux-navigator'
 
 "Plugin 'flazz/vim-colorschemes'
 
 Plugin 'L9'
-Plugin 'FuzzyFinder'
+"Plugin 'FuzzyFinder'
 
 "" Ultisnips Snippet Track the engine.
- Bundle 'SirVer/ultisnips'
+ "Bundle 'SirVer/ultisnips'
  " Snippets are separated from the engine. Add this if you want them:
- Bundle 'honza/vim-snippets'
+ "Bundle 'honza/vim-snippets'
 
 " Code completion
 " This plugin needs to be compiled. 
@@ -77,16 +79,6 @@ Plugin 'FuzzyFinder'
 " Plugin 'ervandew/supertab'
 
 
-" Add maktaba and codefmt to the runtimepath.
-" (The latter must be installed before it can be used.)
-Plugin 'google/vim-maktaba'
-Plugin 'google/vim-codefmt'
-" Also add Glaive, which is used to configure codefmt's maktaba flags. See
-" `:help :Glaive` for usage.
-Plugin 'google/vim-glaive'
-call glaive#Install()
-" Optional: Enable codefmt's default mappings on the <Leader>= prefix.
-Glaive codefmt plugin[mappings]
 
-
-filetype plugin indent on     " required
+call vundle#end()            " required
+filetype plugin indent on    " required

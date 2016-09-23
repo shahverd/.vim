@@ -65,3 +65,45 @@ endfunction
 
 "set errorformat+="%f"\\,%l\\,%c\\,%t%*[a-zA-Z]\\,"%m"
 "command! Phpcs execute RunPhpcs()
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"This is a replacement for FufBuffer
+"Lightweight and quick.
+function! BufSel(pattern)
+  let bufcount = bufnr("$")
+  let TermPattern = "^term://"
+  let ExplorerPattern = "NetrwTreeListing"
+  let currbufnr = 1
+  let nummatches = 0
+  let firstmatchingbufnr = 0
+  while currbufnr <= bufcount
+    if(bufexists(currbufnr) && buflisted(currbufnr))
+      let currbufname = bufname(currbufnr)
+      "We don't want to list terminals and Explorers
+      if( match(currbufname, a:pattern) > -1 && match(currbufname, TermPattern) < 0 && match(currbufname, ExplorerPattern) < 0)
+        echo currbufnr . ": ". bufname(currbufnr)
+        let nummatches += 1
+        let firstmatchingbufnr = currbufnr
+      endif
+    endif
+    let currbufnr = currbufnr + 1
+  endwhile
+  if(nummatches == 1)
+    execute ":buffer ". firstmatchingbufnr
+  elseif(nummatches > 1)
+    let desiredbufnr = input("Enter buffer number: ")
+    if(strlen(desiredbufnr) != 0)
+      execute ":buffer ". desiredbufnr
+    endif
+  else
+    echo "No matching buffers"
+  endif
+endfunction
+
+"Bind the BufSel() function to a user-command
+command! -nargs=1 BufferSelect :call BufSel("<args>")
+command! -nargs=0 BufferSelect :call BufSel(".")

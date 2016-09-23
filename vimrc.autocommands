@@ -20,3 +20,24 @@
 "au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 "au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
 "endifautocmd VimEnter * OpenSession 
+
+"Simple autocomplete pop
+autocmd InsertCharPre * call AutoComplete()
+fun! AutoComplete()
+    if !exists("s:wordLength")
+        let s:wordLength = 0
+        set completeopt+=menu,menuone
+        inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+        autocmd InsertEnter * let s:wordLength = 0
+    endif
+
+    if v:char =~ '\w'
+        let s:wordLength += 1
+    else
+        let s:wordLength = 0
+    endif
+
+    if s:wordLength == 3
+        call feedkeys("\<C-P>\<C-N>")
+    endif
+endfun

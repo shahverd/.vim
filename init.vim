@@ -1,0 +1,1 @@
+/home/mostafa/.vim/vimrc

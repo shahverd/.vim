@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/mostafa/LeadAgg/module/Application/view/application/index'
+let g:netrw_dirhist_2='/home/mostafa/LeadAgg/public/scripts'
+let g:netrw_dirhist_3='/home/mostafa/LeadAgg/public/modules/campaigns'
+let g:netrw_dirhist_4='/home/mostafa/LeadAgg/public/modules/campaigns/views'
+let g:netrw_dirhist_5='/home/mostafa/LeadAgg'
+let g:netrw_dirhist_6='/home/mostafa'
+let g:netrw_dirhist_7='/home/mostafa/LeadAgg'
+let g:netrw_dirhist_8='/home/mostafa/.vim'

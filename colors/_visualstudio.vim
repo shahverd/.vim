@@ -36,12 +36,10 @@ endif
 hi Title        guifg=#202020   gui=none
 hi Underlined   guifg=#202020   gui=underline
 
-"hi Normal       guifg=black     guibg=#ffffff
-hi Normal       guifg=black     guibg=#ededed
-hi ModeMsg      guifg=black     guibg=#ffffff
+hi Normal       guifg=black     guibg=#f2f2f2
+hi ModeMsg      guifg=black     guibg=#f2f2f2
 hi Cursor       guifg=#f0f0f0   guibg=#101010
-"hi LineNr       guifg=#2b91af   guibg=#ffffff gui=none
-hi LineNr       guifg=#2b91af   guibg=#ededed gui=none
+hi LineNr       guifg=#2b91af   guibg=#f2f2f2 gui=none
 hi Visual       guifg=white     guibg=#5381bc
 hi WildMenu     guifg=black     guibg=#ffbc29
 hi IncSearch    guibg=black     guifg=#ffbc29
@@ -51,8 +49,7 @@ hi StatusLine   guifg=white     guibg=black   gui=bold
 hi StatusLineNC guifg=white     guibg=#8090a0 gui=bold
 hi VertSplit    guifg=#a0b0c0   guibg=#a0b0c0 gui=none
 
-"hi NonText      guifg=#bebebe   guibg=#ffffff
-hi NonText      guifg=#bebebe   guibg=ededed
+hi NonText      guifg=#bebebe   guibg=#f2f2f2
 hi Comment      guifg=#008000   gui=none
 hi Folded       guifg=#708090   guibg=#c0d0e0
 hi Folded       guifg=#708090   guibg=#c0d0e0
@@ -79,17 +76,15 @@ hi PreProc      guifg=#2222ff   gui=none
 hi Define       guifg=#2222ff   gui=none
 hi Include      guifg=#2222ff   gui=none
 
-hi Error        guifg=red       guibg=#ffffff   gui=bold,underline
+hi Error        guifg=red       guibg=#f2f2f2   gui=bold,underline
 hi Todo         guifg=blue      guibg=yellow    gui=none
 hi Search       guifg=black     guibg=yellow    gui=none
-hi SpecialKey	guifg=#1060a0   guibg=#ffffff
-hi Special      guifg=#666600   guibg=#ededed
+hi SpecialKey	guifg=#1060a0   guibg=#f2f2f2
+hi Special      guifg=#666600   guibg=#f2f2f2
 
 " Diff
 hi DiffChange   guifg=NONE      guibg=#e0e0e0   gui=bold
 hi DiffText     guifg=NONE      guibg=#f0c8c8   gui=bold
 hi DiffAdd      guifg=NONE      guibg=#c0e0d0   gui=bold
 hi DiffDelete   guifg=NONE      guibg=#f0e0b0   gui=bold
-
-"set guifont=Consolas\ for\ Powerline\ FixedD\ 11
 

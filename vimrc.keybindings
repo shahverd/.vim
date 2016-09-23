@@ -10,9 +10,10 @@ cnoreabbrev W w
 cnoreabbrev Q q
 
 "Key to fullscreen one window
-nmap <F12> :ZoomWin<cr>
+"nmap <F12> :ZoomWin<cr>
+nmap <F12> :tabnew %<cr>
 nmap <F11> :TagbarToggle<cr>
-nmap <F9>  :NERDTreeTabsToggle<cr>
+"nmap <F9>  :NERDTreeTabsToggle<cr>
 
 "nmap <F8> :tabn<cr>
 "nmap <F7> :tabp<cr>
@@ -27,13 +28,14 @@ nmap gl    :bn!<cr>
 nmap gh    :bp!<cr>
 
 nmap gbd  :bp<bar>sp<bar>bn<bar>bd<cr>
-nmap gf  :FufBuffer<cr>
+"nmap gf  :FufBuffer<cr>
+nmap gf  :BufferSelect<cr>
 
 "nmap <F4>  :ConqueTermVSplit bash<cr>
 nmap <F3>  :%s///ign
 "nmap <F1>  :Autoformat<cr>
-nmap <F2>  :YcmDiags<cr>
-nmap <F1>  :YcmCompleter GoToDefinitionElseDeclaration<cr>
+"nmap <F2>  :YcmDiags<cr>
+"nmap <F1>  :YcmCompleter GoToDefinitionElseDeclaration<cr>
 
 " make Y copy to the end of the line and not copy a whole line
 map Y y$
@@ -96,10 +98,20 @@ imap <Del>       <Nop>
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 
-let g:tmux_navigator_no_mappings = 1
+"let g:tmux_navigator_no_mappings = 1
 
-nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
+"nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+"nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+"nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+"nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+"nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
+
+
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
