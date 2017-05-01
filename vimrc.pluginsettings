@@ -16,7 +16,7 @@ endif
 
 " To show a smart tabline (This tabline shows buffers, and not tabs!)
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#enabled = 0
+"let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 "To show only filename
@@ -35,6 +35,9 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
+
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " to prevent startup of NERDTre
 "let g:nerdtree_tabs_open_on_console_startup=0
@@ -102,3 +105,12 @@ let g:session_default_to_last="true"
  " Trigger configuration. Do not use <tab> if you use YouCompleteMe
  "let g:UltiSnipsSnippetDirectories=["./bundle/vim-snippets/UltiSnips"]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"Requred settings for CtrSpace Plugin
+set nocompatible
+set hidden
+if has("gui_running")
+    " Settings for MacVim and Inconsolata font
+    let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢" }
+endif

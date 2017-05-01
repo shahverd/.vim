@@ -41,3 +41,8 @@ fun! AutoComplete()
         call feedkeys("\<C-P>\<C-N>")
     endif
 endfun
+
+
+
+
+"autocmd vimenter * NERDTree

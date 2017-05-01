@@ -13,7 +13,8 @@ cnoreabbrev Q q
 "nmap <F12> :ZoomWin<cr>
 nmap <F12> :tabnew %<cr>
 nmap <F11> :TagbarToggle<cr>
-"nmap <F9>  :NERDTreeTabsToggle<cr>
+"nmap <F9>  :NERDTreeToggle<cr>
+nmap <F9>  :Rex<cr>
 
 "nmap <F8> :tabn<cr>
 "nmap <F7> :tabp<cr>
@@ -29,7 +30,8 @@ nmap gh    :bp!<cr>
 
 nmap gbd  :bp<bar>sp<bar>bn<bar>bd<cr>
 "nmap gf  :FufBuffer<cr>
-nmap gf  :BufferSelect<cr>
+nnoremap <silent><C-p> :CtrlSpace O<CR>
+"nmap gf  :BufferSelect<cr>
 
 "nmap <F4>  :ConqueTermVSplit bash<cr>
 nmap <F3>  :%s///ign

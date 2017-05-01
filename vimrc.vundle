@@ -60,7 +60,9 @@ Plugin 'Chiel92/vim-autoformat'
 
 Plugin 'L9'
 "Plugin 'FuzzyFinder'
-
+Plugin 'vim-ctrlspace/vim-ctrlspace'
+Plugin 'tpope/vim-fugitive'
+Plugin 'arrufat/vala.vim'
 "" Ultisnips Snippet Track the engine.
  "Bundle 'SirVer/ultisnips'
  " Snippets are separated from the engine. Add this if you want them:
