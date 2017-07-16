@@ -155,7 +155,8 @@ colorscheme github
 set t_Co=256
 hi Normal ctermbg=NONE
 hi nonText ctermbg=NONE
-
+hi Normal guibg=NONE
+hi nonText guibg=NONE
 
 
 syn region markdownItalic start="[^* ]\@<=\*\*\@!\|\*\@<!\*[^* ]\@=" end="[^* ]\@<=\*\|\*\@<!\*[^* ]\@=" keepend contains=markdownLineStart
