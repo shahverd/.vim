@@ -22,29 +22,29 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 "Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'majutsushi/tagbar'
 "Plugin 'vim-scripts/ZoomWin'
 
-Plugin 'jszakmeister/vim-togglecursor'
+"Plugin 'jszakmeister/vim-togglecursor'
 
 " Not configured yet
 "Plugin 'Lokaltog/powerline'
 "Plugin 'Lokaltog/vim-powerline'
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
 
 " required by vim-session and YouCompleteMe
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
+"Plugin 'xolox/vim-misc'
+"Plugin 'xolox/vim-session'
 
 " Check Syntax based on file extenssions
 "Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-surround'
 
 " Code Format
-Plugin 'Chiel92/vim-autoformat'
+"Plugin 'Chiel92/vim-autoformat'
 
 " To open terminal inside VIM
 "Plugin 'vim-scripts/Conque-Shell'
@@ -54,19 +54,18 @@ Plugin 'Chiel92/vim-autoformat'
 
 
 " tmux panes plus vim windows together
-"Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-navigator'
 
 "Plugin 'flazz/vim-colorschemes'
 
-Plugin 'L9'
-"Plugin 'FuzzyFinder'
-Plugin 'vim-ctrlspace/vim-ctrlspace'
-Plugin 'tpope/vim-fugitive'
-Plugin 'arrufat/vala.vim'
-"" Ultisnips Snippet Track the engine.
- "Bundle 'SirVer/ultisnips'
- " Snippets are separated from the engine. Add this if you want them:
- "Bundle 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
+" Optional:
+Plugin 'honza/vim-snippets'
+
+
 
 " Code completion
 " This plugin needs to be compiled. 
@@ -79,7 +78,6 @@ Plugin 'arrufat/vala.vim'
 " my self atm ;)
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'ervandew/supertab'
-
 
 
 call vundle#end()            " required

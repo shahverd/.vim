@@ -14,7 +14,10 @@ cnoreabbrev Q q
 nmap <F12> :tabnew %<cr>
 nmap <F11> :TagbarToggle<cr>
 "nmap <F9>  :NERDTreeToggle<cr>
-nmap <F9>  :Rex<cr>
+"nmap <F9>  :NERDTreeToggle<cr>
+
+" For Nerdtree to be opened on current window
+nmap <F9>  :e .<cr>
 
 "nmap <F8> :tabn<cr>
 "nmap <F7> :tabp<cr>
@@ -102,18 +105,18 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 "let g:tmux_navigator_no_mappings = 1
 
-"nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-"nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-"nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-"nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-"nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 
 
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+"tnoremap <C-h> <C-\><C-n><C-w>h
+"tnoremap <C-j> <C-\><C-n><C-w>j
+"tnoremap <C-k> <C-\><C-n><C-w>k
+"tnoremap <C-l> <C-\><C-n><C-w>l
+"nnoremap <C-h> <C-w>h
+"nnoremap <C-j> <C-w>j
+"nnoremap <C-k> <C-w>k
+"nnoremap <C-l> <C-w>l

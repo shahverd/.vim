@@ -6,11 +6,11 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "custom Gui
-"set guioptions-=m  "remove menu bar
+set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 "set guioptions-=e  "remove gui tabs and show builtin 
-"set guioptions-=r  "remove right-hand scroll bar"
-set guioptions+=b " To enable horisental scroll
+set guioptions-=r  "remove right-hand scroll bar"
+"set guioptions+=b " To enable horisental scroll
 
 
 " Sample متن فارسی برای آزمایش فونتهای زیر
@@ -53,7 +53,7 @@ set softtabstop=4
 set expandtab
 
 " Use tabs at the start of a line, spaces elsewhere.
-set smarttab 
+"set smarttab 
 
 
 " To prevent tabs have full path and show only file name
@@ -69,11 +69,11 @@ set noarabicshape
 set clipboard=unnamedplus
 
 " Start fullscreen
-"if has("gui_running")
-	"" GUI is running or is about to start.
-	"" Maximize gvim window.
-	"set lines=100 columns=100
-"endif
+if has("gui_running")
+    " GUI is running or is about to start.
+    " Maximize gvim window.
+    set lines=100 columns=200
+endif
 
 " To prevent filename~ and .swp files in normal directories
 "set backupdir=~/tmp
@@ -89,7 +89,7 @@ set noswapfile
 set laststatus=2
 
 " To make cursor stays in the middle of the screen
-set scrolloff=3
+set scrolloff=300
 
 " To change the leader
 let mapleader = ","
@@ -116,7 +116,32 @@ endif
 " To fix path
 set shell=bash
 
+" colorscheme 
+colorscheme visualstudio
+set t_Co=256
+hi Normal ctermbg=NONE
+hi nonText ctermbg=NONE
+hi Normal guibg=NONE
+hi nonText guibg=NONE
 
+
+syn region markdownItalic start="[^* ]\@<=\*\*\@!\|\*\@<!\*[^* ]\@=" end="[^* ]\@<=\*\|\*\@<!\*[^* ]\@=" keepend contains=markdownLineStart
+syn region markdownItalic start="[^_ ]\@<=__\@!\|_\@<!_[^_]\@=" end="[^_ ]\@<=_\|_\@<!_[^_]\@=" keepend contains=markdownLineStart
+
+"Using Nerdtree style for Explorer
+let g:netrw_liststyle=3
+
+
+" to make tabbar background invisable
+hi TabLineFill cterm=bold gui=bold
+
+" to enable snipMate
+imap <Tab> <Plug>snipMateNextOrTrigger
+smap <Tab> <Plug>snipMateNextOrTrigger
+filetype plugin on
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Transparent editing of gpg encrypted files.
 augroup encrypted
 au!
@@ -148,19 +173,38 @@ autocmd BufWritePre,FileWritePre    *.gpg let &sh=shsave
 autocmd BufWritePost,FileWritePost  *.gpg silent u
 autocmd BufWritePost,FileWritePost  *.gpg set nobin
 augroup END
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Transparent editing of gpg encrypted files.
+augroup encrypted
+au!
+" First make sure nothing is written to ~/.viminfo while editing
+" an encrypted file.
+autocmd BufReadPre,FileReadPre      *.asc set viminfo=
+" We don't want a swap file, as it writes unencrypted data to disk
+autocmd BufReadPre,FileReadPre      *.asc set noswapfile
+" Switch to binary mode to read the encrypted file
+autocmd BufReadPre,FileReadPre      *.asc set bin
+autocmd BufReadPre,FileReadPre      *.asc let ch_save = &ch|set ch=2
+autocmd BufReadPre,FileReadPre      *.asc let shsave=&sh
+autocmd BufReadPre,FileReadPre      *.asc let &sh='sh'
+autocmd BufReadPre,FileReadPre      *.asc let ch_save = &ch|set ch=2
+autocmd BufReadPost,FileReadPost    *.asc '[,']!gpg --decrypt --default-recipient-self 2> /dev/null
+autocmd BufReadPost,FileReadPost    *.asc let &sh=shsave
+" Switch to normal mode for editing
+autocmd BufReadPost,FileReadPost    *.asc set nobin
+autocmd BufReadPost,FileReadPost    *.asc let &ch = ch_save|unlet ch_save
+autocmd BufReadPost,FileReadPost    *.asc execute ":doautocmd BufReadPost " . expand("%:r")
+" Convert all text to encrypted text before writing
+autocmd BufWritePre,FileWritePre    *.asc set bin
+autocmd BufWritePre,FileWritePre    *.asc let shsave=&sh
+autocmd BufWritePre,FileWritePre    *.asc let &sh='sh'
+autocmd BufWritePre,FileWritePre    *.asc '[,']!gpg -a --encrypt --default-recipient-self 2>/dev/null
+autocmd BufWritePre,FileWritePre    *.asc let &sh=shsave
+" Undo the encryption so we are back in the normal text, directly
+" after the file has been written.
+autocmd BufWritePost,FileWritePost  *.asc silent u
+autocmd BufWritePost,FileWritePost  *.asc set nobin
+augroup END
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-" colorscheme 
-colorscheme github
-set t_Co=256
-hi Normal ctermbg=NONE
-hi nonText ctermbg=NONE
-hi Normal guibg=NONE
-hi nonText guibg=NONE
-
-
-syn region markdownItalic start="[^* ]\@<=\*\*\@!\|\*\@<!\*[^* ]\@=" end="[^* ]\@<=\*\|\*\@<!\*[^* ]\@=" keepend contains=markdownLineStart
-syn region markdownItalic start="[^_ ]\@<=__\@!\|_\@<!_[^_]\@=" end="[^_ ]\@<=_\|_\@<!_[^_]\@=" keepend contains=markdownLineStart
-
-"Using Nerdtree style for Explorer
-let g:netrw_liststyle=3

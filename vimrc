@@ -4,14 +4,6 @@
 "
 "
 
-if !has("gui_runnung")
-    source ~/.vim/vimrc.vundle
-    source ~/.vim/vimrc.functions
-    source ~/.vim/vimrc.keybindings
-    "source ~/.vim/vimrc.general
-    source ~/.vim/vimrc.colors
-    source ~/.vim/vimrc.autocommands
-    source ~/.vim/vimrc.pluginsettings
-endif
-
-source ~/.vim/vimrc.general
+source ~/.vim/rc/vundle.vimrc
+source ~/.vim/rc/keybindings.vimrc
+source ~/.vim/rc/general.vimrc
