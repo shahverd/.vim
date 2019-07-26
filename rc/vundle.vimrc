@@ -7,25 +7,12 @@
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-"call vundle#rc()
-"call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"let path = '~/some/path/here'
-"call vundle#rc(path)
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 "Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'scrooloose/nerdcommenter'
-"Plugin 'majutsushi/tagbar'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'francoiscabrol/ranger.vim'
+Plugin 'majutsushi/tagbar'
 "Plugin 'vim-scripts/ZoomWin'
 
 "Plugin 'jszakmeister/vim-togglecursor'
@@ -46,11 +33,9 @@ Plugin 'scrooloose/nerdcommenter'
 " Code Format
 "Plugin 'Chiel92/vim-autoformat'
 
-" To open terminal inside VIM
-"Plugin 'vim-scripts/Conque-Shell'
-
-" Instead of YouCompleteMe
+" Instead of YouCompleteM
 "Plugin 'AutoComplPop'
+"Plugin 'kien/ctrlp.vim'
 
 
 " tmux panes plus vim windows together
@@ -62,25 +47,10 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 
-Plugin 'kalafut/vim-taskjuggler'
+"Plugin 'kalafut/vim-taskjuggler'
 
 " Optional:
 Plugin 'honza/vim-snippets'
 
+Plugin 'nicwest/vim-http'
 
-
-" Code completion
-" This plugin needs to be compiled. 
-" It requres vim-misc
-" sudo apt-get install build-essential cmake
-" sudo apt-get install python-dev
-" cd ~/.vim/bundle/YouCompleteMe
-" ./install.sh --clang-completer
-" Notice: I compiled it without --clang-copletere to avoid extra download for
-" my self atm ;)
-" Plugin 'Valloric/YouCompleteMe'
-" Plugin 'ervandew/supertab'
-
-
-call vundle#end()            " required
-filetype plugin indent on    " required

@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/mostafa/openwsn/openwsn-fw/openstack'
+let g:netrw_dirhist_2='/home/mostafa'
+let g:netrw_dirhist_3='/home/mostafa/.mutt'
+let g:netrw_dirhist_4='/home/mostafa'
+let g:netrw_dirhist_5='/home/mostafa/.vim/rc'
+let g:netrw_dirhist_6='/home/mostafa/app-files'
+let g:netrw_dirhist_7='/home/mostafa/server'

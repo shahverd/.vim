@@ -21,17 +21,17 @@ snippet config
 			'aliases' => [
 			],
 			'factories'=> [
-				'${2:module}'       => '$1\Service\Factory\\$1ServiceFactory',
+				'${2:module}'       => '$1\Service\Factory\MainServiceFactory',
 			],
 		],
 		'controllers' => [
 			'factories' => [
-				'$2'          => '$1\Controller\Factory\\$1ControllerFactory',
+				'$2'          => '$1\Controller\Factory\MainControllerFactory',
 			],
 		],
 		'form_elements' => [
 			'factories' => [
-				'$2'       => '$1\Form\\$1\\$1FormFactory',
+				'$2'       => '$1\Form\Main\MainFormFactory',
 			],
 		],
 		'router' => [
@@ -96,13 +96,13 @@ snippet contfac
 	use Zend\ServiceManager\Factory\InvokableFactory;
 	use Zend\ServiceManager\ServiceManager;
 
-	use $1\Controller\\$1Controller;
+	use $1\Controller\MainController;
 
-	class $1ControllerFactory implements FactoryInterface
+	class MainControllerFactory implements FactoryInterface
 	{
 		public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
 		{
-			$controller = new $1Controller($container);
+			$controller = new MainController($container);
 			$controller->setDb($container->get('${2:module}'));
 			return $controller;
 		}
@@ -135,7 +135,7 @@ snippet crud
 
 	use \Dashboard\Controller\Vendor\CrudController;
 
-	class $1Controller extends CrudController
+	class MainController extends CrudController
 	{
 
 		public function viewAction($admin = false)
@@ -194,7 +194,7 @@ snippet crud
 					if($result)
 					{
 						$this->flashmessenger()->addMessage('New $1 was added successfully.');
-						return $this->redirect()->toRoute('module/' . ($admin ? '${2:module}-admin' : '$2'), ['action' => 'view', 'num' => $result]); 
+						return $this->redirect()->toRoute('module/' . ($admin ? '$2-admin' : '$2'), ['action' => 'view', 'num' => $result]); 
 					}
 					else
 					{
@@ -209,7 +209,7 @@ snippet crud
 				'form'      => $form,
 				'messages'  => $this->flashmessenger()->getMessages(),
 			]);
-			$viewModel->setTemplate('$2/$2/save.phtml');
+			$viewModel->setTemplate('$2/main/save.phtml');
 
 			return $viewModel;
 		}
@@ -234,7 +234,7 @@ snippet crud
 					if($result)
 					{
 						$this->flashmessenger()->addMessage('The $1 was Updated successfully.');
-						return $this->redirect()->toRoute('module/' . ($admin ? '${2:module}-admin' : '$2'), ['action' => 'view', 'num' => $entity_id]);
+						return $this->redirect()->toRoute('module/' . ($admin ? '$2-admin' : '$2'), ['action' => 'view', 'num' => $entity_id]);
 					}
 					else
 					{
@@ -259,7 +259,7 @@ snippet crud
 				'messages'  => $this->flashmessenger()->getMessages(),
 				'edit' => true,
 			]);
-			$viewModel->setTemplate('$2/$2/save.phtml');
+			$viewModel->setTemplate('$2/main/save.phtml');
 
 			return $viewModel;
 		}
@@ -280,13 +280,13 @@ snippet servfac
 
 	use Interop\Container\ContainerInterface;
 
-	use $1\Service\\$1Service;
+	use $1\Service\MainService;
 
-	class $1ServiceFactory implements FactoryInterface
+	class MainServiceFactory implements FactoryInterface
 	{
 		public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
 		{
-			return new $1Service($container);
+			return new MainService($container);
 		}
 		public function createService(ServiceLocatorInterface $serviceLocator)
 		{
@@ -306,7 +306,7 @@ snippet serv
 	use Entity;
 
 
-	class $1Service extends DbBasic
+	class MainService extends DbBasic
 	{
 
 		public function find$1($entity_id, $admin)
@@ -535,7 +535,7 @@ snippet viewsave
 
 snippet formfac
 	<?php
-	namespace ${1:Module}\Form\\$1;
+	namespace ${1:Module}\Form\Main;
 
 	use Zend\ServiceManager\FactoryInterface;
 	use Zend\ServiceManager\ServiceLocatorInterface;
@@ -545,12 +545,12 @@ snippet formfac
 	use Zend\ServiceManager\ServiceManager;
 
 
-	class $1FormFactory implements FactoryInterface
+	class MainFormFactory implements FactoryInterface
 	{
 		public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
 		{
-			$form = new $1Form($container, $requestedName);
-			$form->setInputFilter(new $1FormFilter($requestedName));
+			$form = new MainForm($container, $requestedName);
+			$form->setInputFilter(new MainFormFilter($requestedName));
 			return  $form;
 		}
 		public function createService(ServiceLocatorInterface $serviceLocator)
@@ -563,7 +563,7 @@ snippet formfac
 snippet form
 	<?php
 
-	namespace ${1:Module}\Form\\$1;
+	namespace ${1:Module}\Form\Main;
 	 
 	use Zend\Form\Element;
 	use Zend\Form\Form;
@@ -571,7 +571,7 @@ snippet form
 	use Interop\Container\ContainerInterface;
 	use Zend\Db\Sql\Sql;
 
-	class $1Form extends Form {
+	class MainForm extends Form {
 
 		protected $container;
 		protected $dbAdapter;
@@ -613,10 +613,10 @@ snippet form
 snippet formfil
 	<?php
 
-	namespace ${1:Module}\Form\\$1;
+	namespace ${1:Module}\Form\Main;
 	use Zend\InputFilter\InputFilter;
 	 
-	class $1FormFilter extends InputFilter {
+	class MainFormFilter extends InputFilter {
 	 
 		public function __construct($requestedName) {
 
